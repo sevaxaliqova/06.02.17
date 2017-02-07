@@ -1,0 +1,67 @@
+DML(Data Manipulation Language)- Melumat Emali Dili adlanir . DML emriyle edilen deyisiklikler bazada qalici deyil,geri alina biler.
+
+DML emirleri asagidakilardir:
+
+1) Insert command:Yukle emri bir cedvele melumatlar?n bildirmek ucun istifade olunur.
+Asagidaki numune uzerinde izah edek.
+
++--------------+ ------------------+ -------------------+
+   doctor_id         doctor_name          doctor_phone
++--------------+ ------------------+ -------------------+
+ 
+INSERT into doctor values("100","Seva","5554656"),
+INSERT into doctor values("101","Gunel","7070480");
+
+Bu o demekdir ki, doctor table-na id nomresi 100,adi Seva olan,nomresi 5554656 olan ve eyni zamanda id nomresi 101,adi Gunel,nomresi 7070480 olan hekim datalari elave olunacaq 
+
+Table asagidaki sekle dusur.
++--------------+ ------------------+ -------------------+
+   doctor_id         doctor_name          doctor_phone
++--------------+ ------------------+ -------------------+
+   100              Seva                 5554656
++--------------+ ------------------+ -------------------+
+   101              Gunel                7070480
++--------------+ ------------------+ -------------------+
+
+ Her hansi bir sutuna NULL deyeri elave edile biler.
+
+INSERT into doctor values("100","Seva",null);
+
+Bu o demekdir ki, doctor_phone yerinde hecne yazilmayacaq
+Table asagidaki sekle dusur.
++--------------+ ------------------+ -------------------+
+   doctor_id         doctor_name         doctor_phone             
++--------------+ ------------------+ -------------------+
+   100              Seva                 
++--------------+ ------------------+ -------------------+
+   101              Gunel                7070480
++--------------+ ------------------+ -------------------+
+
+ 
+2) UPDATE command-Yenileme emri, bir cedvelin bir setirini yenilemek ucun istifade edilir.
+
+UPDATE doctor set doctor_name = "Lala", doctor_phone = "36465" where doctor_id = 101;
+
+Table asagidaki sekle dusur.
+
++--------------+ ------------------+ -------------------+
+   doctor_id         doctor_name         doctor_phone             
++--------------+ ------------------+ -------------------+
+   100              Seva                 
++--------------+ ------------------+ -------------------+
+   101              Lala                 36465
++--------------+ ------------------+ -------------------+
+
+3) DELETE command - data silm?k ucun istifad? olunur.
+ 
+DELETE from doctor where doctor_id=101;
+
+Table asagidaki sekle dusur.
+
+
++--------------+ ------------------+ -------------------+
+   doctor_id         doctor_name         doctor_phone             
++--------------+ ------------------+ -------------------+
+   100              Seva                 
++--------------+ ------------------+ -------------------+
+
